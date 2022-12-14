@@ -101,9 +101,7 @@ function Canvas() {
 
   const deleteLayers = useDeleteLayers();
 
-  /**
-   * Hook used to listen to Undo / Redo and delete selected layers
-   */
+  
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
       switch (e.key) {
@@ -131,9 +129,7 @@ function Canvas() {
     };
   }, [deleteLayers, history]);
 
-  /**
-   * Select the layer if not already selected and start translating the selection
-   */
+  
   const onLayerPointerDown = useMutation(
     ({ self, setMyPresence }, e: React.PointerEvent, layerId: string) => {
       if (
